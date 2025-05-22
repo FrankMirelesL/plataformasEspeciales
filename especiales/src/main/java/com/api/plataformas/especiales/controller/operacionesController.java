@@ -23,6 +23,7 @@ public class operacionesController {
         operacionResponse response;
         try {
             String secretoDescifrado = aesUtil.decrypt(operacion.getSecreto());
+            operacion.setSecreto(secretoDescifrado);
             RestTemplate restTemplate = new RestTemplate();
              response = restTemplate.postForObject(
                 "http://localhost:8081/api/operaciones",

@@ -6,9 +6,7 @@
 
     <form @submit.prevent="guardarOperacion" class="space-y-4">
       <div>
-        <label class="block font-semibold text-gray-700 mb-1"
-          >operacion</label
-        >
+        <label class="block font-semibold text-gray-700 mb-1">operacion</label>
         <input
           v-model="operacion"
           type="text"
@@ -17,9 +15,7 @@
         />
       </div>
       <div>
-        <label class="block font-semibold text-gray-700 mb-1"
-          >importe</label
-        >
+        <label class="block font-semibold text-gray-700 mb-1">importe</label>
         <input
           v-model="importe"
           type="text"
@@ -28,9 +24,7 @@
         />
       </div>
       <div>
-        <label class="block font-semibold text-gray-700 mb-1"
-          >cliente</label
-        >
+        <label class="block font-semibold text-gray-700 mb-1">cliente</label>
         <input
           v-model="cliente"
           type="text"
@@ -40,9 +34,7 @@
         />
       </div>
       <div>
-        <label class="block font-semibold text-gray-700 mb-1"
-          >secreto</label
-        >
+        <label class="block font-semibold text-gray-700 mb-1">secreto</label>
         <input
           v-model="secreto"
           type="text"
@@ -70,11 +62,10 @@ export default {
       id: "",
       estatus: "",
       referencia: "",
-      operacion: ""
+      operacion: "",
     };
   },
-  async created() {
-  },
+  async created() {},
   methods: {
     async guardarOperacion() {
       try {
@@ -84,7 +75,7 @@ export default {
           cliente: this.cliente,
           secreto: this.secreto,
         });
-        alert("Operaion creada con éxito " + response.data);
+        alert("Operaion creada con éxito " + JSON.stringify(response.data));
       } catch (error) {
         alert(
           "Error al crear la operacion: " +
